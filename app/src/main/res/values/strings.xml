@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Catalog [test case]</string>
+    <string name="title_catalog">Catalog</string>
+    <string name="error_failed_to_load_more_items">Failed to load more items</string>
+    <string name="error_failed_to_load_items">Failed to load catalog items</string>
+    <string name="text_loading_catalog_items">Loading catalog items …</string>
+    <string name="text_retry">Retry</string>
+    <string name="title_details">Details</string>
+    <string name="button_back">Back</string>
+    <string name="text_loading_item_details">Loading item details...</string>
+    <string name="error_item_not_found">Item not found</string>
+    <string name="error_unknown">An unknown error occurred</string>
+    <string name="text_description">Description</string>
+    <string name="text_id">ID</string>
+</resources>
