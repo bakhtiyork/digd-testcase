@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -35,12 +38,15 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    val localProps = Properties()
+    localProps.load(FileInputStream(rootProject.file("local.properties")))
+
     buildTypes {
         debug {
-            buildConfigField("String", "AUTH_TOKEN", "\"${properties["AUTH_TOKEN"]}\"")
+            buildConfigField("String", "AUTH_TOKEN", "\"${localProps["AUTH_TOKEN"]}\"")
         }
         release {
-            buildConfigField("String", "AUTH_TOKEN", "\"${properties["AUTH_TOKEN"]}\"")
+            buildConfigField("String", "AUTH_TOKEN", "\"${localProps["AUTH_TOKEN"]}\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
